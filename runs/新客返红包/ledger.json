@@ -1,0 +1,64 @@
+{
+  "activity": "新客返红包（T3 逆向陷阱）",
+  "created": "2026-08-31 20:48",
+  "steps": {
+    "S1": {
+      "status": "passed",
+      "ts": "2026-08-31 20:48",
+      "artifacts": {
+        "01-活动画像.md": "5dd455b3864f"
+      }
+    },
+    "S2": {
+      "status": "passed",
+      "ts": "2026-08-31 20:49",
+      "artifacts": {
+        "02-信息底座.md": "9b54cc514b9a"
+      }
+    },
+    "S3": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "03-活动规则.md": "4f20fc8bf905"
+      }
+    },
+    "S4": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "04-逆向方案.md": "63c53acb770c"
+      }
+    },
+    "S5": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "05-曝光动线.md": "b0c3e9535f81"
+      }
+    },
+    "S6": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "06-成本与实验.md": "6693ee17f2dd"
+      }
+    },
+    "S7": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "07-产品方案.md": "3956fd4b6d14",
+        "08-决策点汇报表.md": "cb795c08ada3",
+        "09-审查报告.md": "eb2309f25cb5"
+      }
+    },
+    "S8": {
+      "status": "passed",
+      "ts": "2026-09-19 19:27",
+      "artifacts": {
+        "10-方案可视化.html": "af00e05c757f"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "activity": "超市沉默用户召回计划",
+  "created": "2026-08-27 18:23",
+  "steps": {
+    "S1": {
+      "status": "passed",
+      "ts": "2026-08-27 18:23",
+      "artifacts": {
+        "01-活动画像.md": "5c57d0563e6e"
+      }
+    },
+    "S2": {
+      "status": "passed",
+      "ts": "2026-08-27 18:24",
+      "artifacts": {
+        "02-信息底座.md": "04e5592343a1"
+      }
+    },
+    "S3": {
+      "status": "passed",
+      "ts": "2026-08-27 18:24",
+      "artifacts": {
+        "03-活动规则.md": "58232b7498ba"
+      }
+    },
+    "S4": {
+      "status": "passed",
+      "ts": "2026-08-27 18:25",
+      "artifacts": {
+        "04-逆向方案.md": "d7726fcc524b"
+      }
+    },
+    "S5": {
+      "status": "passed",
+      "ts": "2026-08-27 18:25",
+      "artifacts": {
+        "05-曝光动线.md": "3926c0ff4ce5"
+      }
+    },
+    "S6": {
+      "status": "passed",
+      "ts": "2026-08-27 18:25",
+      "artifacts": {
+        "06-成本与实验.md": "6da40ac85302"
+      }
+    },
+    "S7": {
+      "status": "passed",
+      "ts": "2026-08-27 18:25",
+      "artifacts": {
+        "07-产品方案.md": "9e6c4e17b4b1",
+        "08-决策点汇报表.md": "8cbdaf94d5d2",
+        "09-审查报告.md": "d681ae5a817c"
+      }
+    },
+    "S8": {
+      "status": "passed",
+      "ts": "2026-08-27 18:25",
+      "artifacts": {
+        "10-方案可视化.html": "9597596db8a6"
+      }
+    }
+  }
+}

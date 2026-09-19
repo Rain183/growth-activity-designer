@@ -1,0 +1,64 @@
+{
+  "activity": "频道日频抽奖（盲测）",
+  "created": "2026-04-24 11:30",
+  "steps": {
+    "S1": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "01-活动画像.md": "29d23fe0a523"
+      }
+    },
+    "S2": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "02-信息底座.md": "80e247b03ad0"
+      }
+    },
+    "S3": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "03-活动规则.md": "a09cde84fc02"
+      }
+    },
+    "S4": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "04-逆向方案.md": "d6e616520de9"
+      }
+    },
+    "S5": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "05-曝光动线.md": "2f2fd4365433"
+      }
+    },
+    "S6": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "06-成本与实验.md": "f0e23c957bae"
+      }
+    },
+    "S7": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "07-产品方案.md": "18f59e6f66be",
+        "08-决策点汇报表.md": "4007e5ef3c20",
+        "09-审查报告.md": "23dffc600934"
+      }
+    },
+    "S8": {
+      "status": "passed",
+      "ts": "2026-09-19 19:29",
+      "artifacts": {
+        "10-方案可视化.html": "ef355b032a42"
+      }
+    }
+  }
+}

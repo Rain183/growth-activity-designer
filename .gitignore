@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 临时与备份
+_tmp/
+_smoke_tmp/
+_docx_tmp/
+_withdrawn_*/
+*.tmp
+*.bak
+*~
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

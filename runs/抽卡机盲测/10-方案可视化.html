@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang='zh'><head><meta charset='utf-8'>
+<title>频道日频抽奖（盲测） · 方案可视化</title><style>
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;margin:0;background:#f4f6fa;color:#222}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 20px}
+.hero{background:linear-gradient(120deg,#e2231a,#ff6a3d);color:#fff;border-radius:14px;padding:28px 32px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:26px}.hero p{margin:0;opacity:.92}
+.card{background:#fff;border-radius:12px;padding:22px 26px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card h2{margin:0 0 12px;font-size:18px;border-left:4px solid #e2231a;padding-left:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
+th,td{border:1px solid #d8dde6;padding:6px 9px;text-align:left;vertical-align:top}
+th{background:#fff3f2}
+h3,h4,h5{margin:14px 0 6px}blockquote{border-left:3px solid #ffb3a7;margin:6px 0;padding:4px 12px;color:#666;background:#fff8f7}
+.badge{display:inline-block;background:#fff;color:#e2231a;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:600;margin-right:8px}
+details{margin-bottom:10px}summary{cursor:pointer;font-weight:600;padding:8px 0}
+.onepager .card{border-top:3px solid #e2231a}
+</style></head><body><div class='wrap'>
+<div class='hero'><span class='badge'>评审版</span><h1>频道日频抽奖（盲测）</h1><h3>1. 活动概述</h3>
+<p>每日进入超市卡频道可抽奖：小额赠金为主、品类券兜底、稀有大奖氛围；完成任务可加抽。北极星：频道日均访问 UV；护栏：跳出率、核销率、成本日控。常驻日频。</p></div>
+<h2 style='margin:18px 4px'>一页纸 · 评审要点</h2>
+<div class='onepager'>
+ <div class='grid'>
+  <div class='card'><h2>触发规则</h2><table>
+<tr><th>字段</th><th>内容</th></tr>
+<tr><td>动作</td><td>每日进入频道点击抽奖</td></tr>
+<tr><td>命中条件</td><td>每用户每日 1 次基础机会（零下单要求）；完成指定浏览/下单任务可加抽（任务型加成，实验位）。金额口径不适用：动作为访问非消费；商品池不适用：不挂商品（加抽任务若含下单，沿用任务所属活动的商品口径）</td></tr>
+<tr><td>发奖条件</td><td>抽即开奖、实时到账</td></tr>
+<tr><td>奖励</td><td>概率型组合：小额超市卡赠金（30天有效）为主 + 品类券兜底 + 稀有大额卡作头部氛围奖</td></tr>
+</table></div>
+  <div class='card'><h2>逆向五场景</h2><table>
+<tr><th>#</th><th>场景</th><th>处理规则</th><th>用户感知文案要点</th></tr>
+<tr><td>1</td><td>部分退款仍满足任务条件</td><td>加抽所得保留</td><td>无需提示</td></tr>
+<tr><td>2</td><td>退款后不再满足任务条件（奖励未使用）</td><td>回收对应加抽所得赠金/券</td><td>退款页提示&quot;任务奖励将被回收&quot;</td></tr>
+<tr><td>3</td><td>用奖后退款（加抽奖励已消费）</td><td>按既有&quot;已用权益从退款中扣除&quot;惯例处理</td><td>挽留弹窗提示</td></tr>
+<tr><td>4</td><td>边界时间套利</td><td>赠金临过期使用后退货：沿用&quot;自动延期一次、第二次按过期&quot;惯例</td><td>—</td></tr>
+<tr><td>5</td><td>机器与批量薅羊毛</td><td>接入风控能力清单：设备/账号维度识别，批量小号抽奖拦截、取消资格、回收已发权益</td><td>规则页公示</td></tr>
+</table></div>
+  <div class='card'><h2>曝光触点矩阵</h2><table>
+<tr><th>域</th><th>触点</th><th>未参与用户</th><th>当日已抽</th><th>有加抽机会</th><th>前置条件/红线</th></tr>
+<tr><td>私域</td><td>频道首页固定入口</td><td>入口+今日可抽提示</td><td>明日再来提示</td><td>剩余机会数外露</td><td><strong>产品性曝光：日频功能固定位，不占平台级活动位</strong></td></tr>
+<tr><td>私域</td><td>活动页</td><td>抽奖交互+概率公示入口</td><td>任务列表（加抽）</td><td>同左</td><td>概率公示合规</td></tr>
+<tr><td>私域</td><td>我的页/权益中心</td><td>不做抽奖触达</td><td>不做</td><td>不做</td><td><strong>与余额提醒区隔，避免权益信息骚扰</strong></td></tr>
+<tr><td>公域</td><td>黄金流程</td><td>不投放</td><td>—</td><td>—</td><td>访频型玩法不进交易链路，结算页零打扰</td></tr>
+<tr><td>私域</td><td>推送</td><td>仅对已授权且连续多日未访问的开卡用户限频提醒（实验位）</td><td>—</td><td>—</td><td>推送合规+限频</td></tr>
+</table></div>
+  <div class='card'><h2>实验点盘点</h2><table>
+<tr><th>实验点</th><th>类型</th><th>是否实验</th></tr>
+<tr><td>中奖率梯度（期望成本三档）</td><td>功能型</td><td>必须（实验一）</td></tr>
+<tr><td>加抽任务结构</td><td>功能型</td><td>实验二</td></tr>
+<tr><td>入口样式/推送限频策略</td><td>效果型</td><td>实验三分层，不叉乘</td></tr>
+<tr><td>抽即开奖机制</td><td>基石机制</td><td>无法实验</td></tr>
+</table></div>
+ </div>
+ <div class='card'><h2>关键决策点（请示项）</h2><table>
+<tr><th>需求模块</th><th>决策点</th><th>方案结论</th><th>请示项/开放问题</th><th>mentor 意见</th></tr>
+<tr><td>玩法选型</td><td>日频概率抽奖</td><td>缺口反推选定</td><td>与在投刮卡类日频互斥，二选一或错档请拍板</td><td></td></tr>
+<tr><td>触发规则</td><td>加抽任务结构</td><td>浏览/下单任务加抽（实验位）</td><td>任务类型清单请业务定</td><td></td></tr>
+<tr><td>奖励</td><td>概率组合结构</td><td>赠金主奖+券兜底+稀有大奖</td><td>大奖面额与库存请示</td><td></td></tr>
+<tr><td>成本</td><td>中奖率区间</td><td>以日度额度反推（公式见06）</td><td>日度额度请财务口径确认</td><td></td></tr>
+<tr><td>逆向</td><td>任务奖励回收</td><td>按订单回收</td><td>客服口径会签</td><td></td></tr>
+<tr><td>曝光</td><td>推送限频策略</td><td>仅授权+连续未访问用户（实验位）</td><td>合规复核</td><td></td></tr>
+</table></div>
+</div>
+<h2 style='margin:18px 4px'>完整方案 · 分节展开</h2><details ><summary>S1 活动画像</summary><div class='card'><h2>01 活动画像（S1）· 盲测诉求</h2>
+<h3>一、北极星与护栏</h3>
+<ul>
+<li>北极星：超市卡频道日均访问 UV（口径：频道全部入口去重 UV，日度）；辅助：开卡渗透（访问→开卡转化）。</li>
+<li>护栏：频道跳出率不升；权益核销率不恶化（发出去的要被用掉）；成本日度可控。</li>
+</ul>
+<h3>二、目标人群与量级</h3>
+<p>全量登录用户可参与；重点唤回子群：已开卡低活跃用户（口径：开卡且近30日无访问）。量级按 BI 当期取数。</p>
+<h3>三、可投入资源</h3>
+<p>权益：小额超市卡赠金与品类券（频道日常资源承担，量级小、日度发放）；渠道位：频道首页固定入口。</p>
+<h3>四、不可破底线</h3>
+<p>单用户日成本上限极低（日常池口径）；不可打扰未授权用户（推送合规）；概率类玩法须遵守概率公示合规要求。</p></div></details><details ><summary>S2 信息底座</summary><div class='card'><h2>02 信息底座（S2）</h2>
+<table>
+<tr><th>信息件</th><th>层</th><th>内容/口径</th><th>来源</th></tr>
+<tr><td>权益工具箱</td><td>静态</td><td>赠金 30 天有效、红包变种可自动延期一次；品类券结构</td><td>assets-toolbox.md（库内）</td></tr>
+<tr><td>触点规则</td><td>静态</td><td>日常功能走产品性曝光，不占平台级活动位</td><td>exposure-touchpoints.md（库内）</td></tr>
+<tr><td>逆向先例</td><td>静态</td><td>五场景清单</td><td>reverse-checklist.md（库内）</td></tr>
+<tr><td>频道日均 UV 与访频分布</td><td>动态</td><td>取数口径：频道去重 UV、人均周访问次数分布</td><td>BI 系统直查（索取）</td></tr>
+<tr><td>开卡低活跃人群规模</td><td>动态</td><td>取数口径：开卡且近30日无访问</td><td>BI 系统直查（索取）</td></tr>
+<tr><td>日常资源日度额度</td><td>动态</td><td>频道日常可用额度口径</td><td>人工请示（索取）</td></tr>
+<tr><td>在投活动清单</td><td>动态</td><td>频道内日频玩法与楼层占位</td><td>活动报名系统导出（索取）</td></tr>
+</table>
+<h3>索取清单</h3>
+<p>动态四件按上述口径回填（BI×2、报名系统×1、人工请示×1）。</p></div></details><details ><summary>S3 活动规则</summary><div class='card'><h2>03 活动规则（S3）· 盲测方案</h2>
+<h3>候选玩法对比与选型</h3>
+<table>
+<tr><th>候选</th><th>判定</th><th>排除/选定理由</th></tr>
+<tr><td>比例返卡型（p1）</td><td>排除</td><td>依赖下单动作，拉不动&quot;日访问&quot;这个高频轻行为</td></tr>
+<tr><td>单品购返型（p2）</td><td>排除</td><td>同上，且成本挂商品毛利与访频目标错位</td></tr>
+<tr><td>充值加赠型（p3）</td><td>排除</td><td>拉充值不拉访频</td></tr>
+<tr><td>全链路触达强化（p5）</td><td>排除</td><td>无&quot;每日回访&quot;的行为钩子</td></tr>
+<tr><td><strong>每日概率抽奖型（新结构，由缺口反推）</strong></td><td><strong>选定</strong></td><td>日频轻动作+即时随机反馈是拉访频的经典结构；小额权益成本可日度控盘</td></tr>
+</table>
+<h3>触发规则</h3>
+<table>
+<tr><th>字段</th><th>内容</th></tr>
+<tr><td>动作</td><td>每日进入频道点击抽奖</td></tr>
+<tr><td>命中条件</td><td>每用户每日 1 次基础机会（零下单要求）；完成指定浏览/下单任务可加抽（任务型加成，实验位）。金额口径不适用：动作为访问非消费；商品池不适用：不挂商品（加抽任务若含下单，沿用任务所属活动的商品口径）</td></tr>
+<tr><td>发奖条件</td><td>抽即开奖、实时到账</td></tr>
+<tr><td>奖励</td><td>概率型组合：小额超市卡赠金（30天有效）为主 + 品类券兜底 + 稀有大额卡作头部氛围奖</td></tr>
+</table>
+<h3>杠杆参数（全部实验位）</h3>
+<ul>
+<li>中奖率结构：赠金/券/大奖/未中四档概率分布（实验位：以期望成本≤日常池口径反推区间）；</li>
+<li>赠金面额区间与大奖面额（实验位）；</li>
+<li>加抽任务次数上限（实验位）。</li>
+</ul>
+<h3>基本规则</h3>
+<p>时间：常驻日频；区域：全国；人群：全量登录用户；单用户每日机会数封顶；活动总发奖=按日成本上限与库存管理。逐项理由见决策点汇报表。</p>
+<h3>互斥扫描（覆盖在投清单 100%，逐条判定）</h3>
+<table>
+<tr><th>在投活动</th><th>权益冲突</th><th>场景冲突</th><th>判定</th></tr>
+<tr><td>消费挑战（周期达标）</td><td>实物达标奖 vs 日频小额随机奖，层级不同</td><td>频道楼层排序协调</td><td>不互斥</td></tr>
+<tr><td>满额返/单品购返</td><td>返卡挂下单动作，本活动挂访问动作</td><td>无同位竞争</td><td>不互斥</td></tr>
+<tr><td>刮卡类日频（如在投）</td><td><strong>同为日频概率型，权益与场景双重叠</strong></td><td>同楼层竞争</td><td>互斥——需二选一或错档运营，列入请示项</td></tr>
+<tr><td>新人类活动</td><td>面向新客</td><td>楼层错位</td><td>不互斥</td></tr>
+</table></div></details><details ><summary>S4 逆向与风控</summary><div class='card'><h2>04 逆向方案（S4）· 盲测方案</h2>
+<h3>结构性判据</h3>
+<p>奖励为即抽即发的小额赠金/券，无支付环节、无&quot;部分追回&quot;需求；但<strong>加抽任务若含下单动作</strong>，任务奖励依附订单——需订单关联记录支持回收。结论：主链路无退款逆向，任务链路按订单回收。</p>
+<h3>场景处理</h3>
+<table>
+<tr><th>#</th><th>场景</th><th>处理规则</th><th>用户感知文案要点</th></tr>
+<tr><td>1</td><td>部分退款仍满足任务条件</td><td>加抽所得保留</td><td>无需提示</td></tr>
+<tr><td>2</td><td>退款后不再满足任务条件（奖励未使用）</td><td>回收对应加抽所得赠金/券</td><td>退款页提示&quot;任务奖励将被回收&quot;</td></tr>
+<tr><td>3</td><td>用奖后退款（加抽奖励已消费）</td><td>按既有&quot;已用权益从退款中扣除&quot;惯例处理</td><td>挽留弹窗提示</td></tr>
+<tr><td>4</td><td>边界时间套利</td><td>赠金临过期使用后退货：沿用&quot;自动延期一次、第二次按过期&quot;惯例</td><td>—</td></tr>
+<tr><td>5</td><td>机器与批量薅羊毛</td><td>接入风控能力清单：设备/账号维度识别，批量小号抽奖拦截、取消资格、回收已发权益</td><td>规则页公示</td></tr>
+</table></div></details><details ><summary>S5 曝光动线</summary><div class='card'><h2>05 曝光动线（S5）· 盲测方案</h2>
+<h3>触点 × 用户状态矩阵</h3>
+<table>
+<tr><th>域</th><th>触点</th><th>未参与用户</th><th>当日已抽</th><th>有加抽机会</th><th>前置条件/红线</th></tr>
+<tr><td>私域</td><td>频道首页固定入口</td><td>入口+今日可抽提示</td><td>明日再来提示</td><td>剩余机会数外露</td><td><strong>产品性曝光：日频功能固定位，不占平台级活动位</strong></td></tr>
+<tr><td>私域</td><td>活动页</td><td>抽奖交互+概率公示入口</td><td>任务列表（加抽）</td><td>同左</td><td>概率公示合规</td></tr>
+<tr><td>私域</td><td>我的页/权益中心</td><td>不做抽奖触达</td><td>不做</td><td>不做</td><td><strong>与余额提醒区隔，避免权益信息骚扰</strong></td></tr>
+<tr><td>公域</td><td>黄金流程</td><td>不投放</td><td>—</td><td>—</td><td>访频型玩法不进交易链路，结算页零打扰</td></tr>
+<tr><td>私域</td><td>推送</td><td>仅对已授权且连续多日未访问的开卡用户限频提醒（实验位）</td><td>—</td><td>—</td><td>推送合规+限频</td></tr>
+</table>
+<p>需协商方：频道楼层排序（与消费挑战等在投活动错位）。</p></div></details><details ><summary>S6 成本与实验</summary><div class='card'><h2>06 成本与实验（S6）· 盲测方案</h2>
+<h3>成本测算（全公式）</h3>
+<ul>
+<li>期望成本/抽 = Σ(各档中奖率 × 对应面额)；</li>
+<li>日成本 = 期望成本/抽 × 日抽次数（= 日参与 UV × 人均机会数）；</li>
+<li>中奖率结构以&quot;日成本 ≤ 业务方给定的日度额度&quot;反推可行区间（这是概率型玩法成本控制的核心等式）；</li>
+<li>品类券成本按券核销口径计；日度额度上限由业务方给定。</li>
+</ul>
+<h3>能否/要否 AB</h3>
+<p>能；要——中奖率结构与面额无先验最优值，必须实验。</p>
+<h3>实验点盘点</h3>
+<table>
+<tr><th>实验点</th><th>类型</th><th>是否实验</th></tr>
+<tr><td>中奖率梯度（期望成本三档）</td><td>功能型</td><td>必须（实验一）</td></tr>
+<tr><td>加抽任务结构</td><td>功能型</td><td>实验二</td></tr>
+<tr><td>入口样式/推送限频策略</td><td>效果型</td><td>实验三分层，不叉乘</td></tr>
+<tr><td>抽即开奖机制</td><td>基石机制</td><td>无法实验</td></tr>
+</table>
+<h3>分轮实验计划</h3>
+<ul>
+<li>实验一：用户级分流（日频玩法按周为最小判读窗，<strong>跨周锁组</strong>）；组别=中奖率三档+空白对照；首行分流公平性检查；指标=频道访问 UV 增量（北极星）/参与率/次日回访率/期望成本偏差；判读=访问增量显著且日成本可控，跑满两周；</li>
+<li>实验二：加抽任务有无对照，看访频增量与任务完成率；</li>
+<li>实验三：触点效果分层；</li>
+<li>护栏：频道跳出率、赠金核销率（防&quot;抽了不用&quot;堆积）、客诉率；</li>
+<li>样本量：按频道日 UV 与最小可检测差异反推，算不出显著性不开组。</li>
+</ul></div></details><details open><summary>S7 方案汇编</summary><div class='card'><h2>频道日频抽奖活动 · 完整产品方案（盲测产出）</h2>
+<h3>1. 活动概述</h3>
+<p>每日进入超市卡频道可抽奖：小额赠金为主、品类券兜底、稀有大奖氛围；完成任务可加抽。北极星：频道日均访问 UV；护栏：跳出率、核销率、成本日控。常驻日频。</p>
+<h3>2. 业务背景与诉求</h3>
+<p>频道访问频次与开卡渗透待提升，需要日频轻互动钩子；人群全量、重点唤回开卡低活跃用户。</p>
+<h3>3. 玩法选型</h3>
+<p>五候选排除（返卡类挂下单动作拉不动日访问/充值加赠错位/触达无回访钩子），选定<strong>每日概率抽奖型</strong>（由缺口反推的新结构）。</p>
+<h3>4. 活动规则</h3>
+<p>触发（动作=每日点击抽奖；命中=每日1次基础+任务加抽；发奖=抽即开奖；奖励=概率组合）；杠杆全实验位（中奖率结构/面额/加抽上限）；互斥扫描发现与刮卡类日频活动双重叠，列入请示。</p>
+<h3>5. 逆向与风控</h3>
+<p>主链路无退款逆向；加抽任务奖励按订单回收；批量小号薅奖走风控能力清单。详见 04。</p>
+<h3>6. 曝光动线</h3>
+<p>频道固定入口（产品性曝光）+活动页概率公示；我的页不做抽奖触达；黄金流程零投放；推送限频实验位。详见 05。</p>
+<h3>7. 成本测算</h3>
+<p>期望成本/抽=Σ(中奖率×面额)；日成本=期望成本×日抽次数≤业务方给定的日度额度（以此反推中奖率区间）。</p>
+<h3>8. 实验计划</h3>
+<p>实验一中奖率梯度（周判读窗、跨周锁组、公平性检查）；实验二加抽任务；实验三触点分层；护栏：跳出率/核销率/客诉。</p>
+<h3>9. 关键决策点汇报表</h3>
+<p>见 08。</p>
+<h3>10. 边界声明</h3>
+<p>系统流程图与系统需求由研发承接，不在本方案范围。</p></div></details><details ><summary>S7 决策点汇报表</summary><div class='card'><h2>关键决策点汇报表（盲测产出）</h2>
+<table>
+<tr><th>需求模块</th><th>决策点</th><th>方案结论</th><th>请示项/开放问题</th><th>mentor 意见</th></tr>
+<tr><td>玩法选型</td><td>日频概率抽奖</td><td>缺口反推选定</td><td>与在投刮卡类日频互斥，二选一或错档请拍板</td><td></td></tr>
+<tr><td>触发规则</td><td>加抽任务结构</td><td>浏览/下单任务加抽（实验位）</td><td>任务类型清单请业务定</td><td></td></tr>
+<tr><td>奖励</td><td>概率组合结构</td><td>赠金主奖+券兜底+稀有大奖</td><td>大奖面额与库存请示</td><td></td></tr>
+<tr><td>成本</td><td>中奖率区间</td><td>以日度额度反推（公式见06）</td><td>日度额度请财务口径确认</td><td></td></tr>
+<tr><td>逆向</td><td>任务奖励回收</td><td>按订单回收</td><td>客服口径会签</td><td></td></tr>
+<tr><td>曝光</td><td>推送限频策略</td><td>仅授权+连续未访问用户（实验位）</td><td>合规复核</td><td></td></tr>
+</table></div></details><details ><summary>S7 审查报告</summary><div class='card'><h2>S7 方法论审查报告（盲测产出）</h2>
+<table>
+<tr><th>#</th><th>审查项</th><th>结论</th><th>证据</th></tr>
+<tr><td>1</td><td>玩法与北极星同向</td><td>通过</td><td>日频抽奖直接挂访问动作；候选排除理由齐全（03）</td></tr>
+<tr><td>2</td><td>触发规则字段完整</td><td>通过</td><td>四字段齐全；奖励为赠金/券组合，无金额门槛（零下单要求已写明，本金赠金口径不适用于访问型动作，已注明）（03）</td></tr>
+<tr><td>3</td><td>杠杆参数留实验位</td><td>通过</td><td>中奖率/面额/加抽上限集中声明并标实验位（03）</td></tr>
+<tr><td>4</td><td>互斥扫描全覆盖</td><td>通过</td><td>在投清单逐条判定，发现刮卡类日频双重叠并列入请示（03）</td></tr>
+<tr><td>5</td><td>逆向场景全覆盖</td><td>通过</td><td>五场景+结构性判据（任务奖励依附订单）（04）</td></tr>
+<tr><td>6</td><td>曝光不越红线</td><td>通过</td><td>产品性固定入口；黄金流程零投放；我的页不骚扰；推送限频合规（05）</td></tr>
+<tr><td>7</td><td>成本公式可复算</td><td>通过</td><td>期望成本等式+日常池反推区间+池归属（06）</td></tr>
+<tr><td>8</td><td>实验计划完备</td><td>通过</td><td>盘点覆盖可变项、周判读窗跨周锁组、护栏与样本量（06）</td></tr>
+</table></div></details>
+</div></body></html>
