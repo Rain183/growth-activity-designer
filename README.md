@@ -23,9 +23,11 @@
 每一步的产物必须命中规定要素才准放行，否则**状态不落账、流程硬停**：
 
 ```console
-$ python3 scripts/ledger.py advance ../runs/某活动 S3
-❌ ledger：防跳步：前序未完成 ['S1', 'S2']
+$ python3 scripts/ledger.py advance ../runs/某活动 S2
+❌ ledger：防跳步：前序未完成 ['S1']
 ```
+
+（步骤名只接受 S1–S8；`<run目录>` 换成实际路径，如 `../runs/消费挑战`。）
 
 这不是报错，是哨兵在站岗——**方案不是一次生成出来的，是被八道关卡卡出来的。**
 
